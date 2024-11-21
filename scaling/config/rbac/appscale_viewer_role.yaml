@@ -1,0 +1,23 @@
+# permissions for end users to view appscales.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: scaling
+    app.kubernetes.io/managed-by: kustomize
+  name: appscale-viewer-role
+rules:
+- apiGroups:
+  - api.vikasbadoni.com
+  resources:
+  - appscales
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - api.vikasbadoni.com
+  resources:
+  - appscales/status
+  verbs:
+  - get

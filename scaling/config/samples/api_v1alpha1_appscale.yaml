@@ -1,0 +1,14 @@
+apiVersion: api.vikasbadoni.com/v1alpha1
+kind: Appscale
+metadata:
+  labels:
+    app.kubernetes.io/name: scaling
+    app.kubernetes.io/managed-by: kustomize
+  name: appscale-sample
+spec:
+  start: 14
+  end: 23
+  replicas: 5
+  deployments:
+    - name: mydeploy
+      namespace: default
